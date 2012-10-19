@@ -1,0 +1,28 @@
+/* source: http://www.prasenjitsharan.com/blog/rgba-and-hsla-colors-in-css-2/
+ */
+
+/* This css file contains the style examples used in the blog
+ * post with the link above. This is just for demonstration 
+ * purpose, not a complete working version of a project.
+ */
+
+/* RGBa and HSLa are two ways to declare colors in a CSS with transparency */
+
+div {
+    background: rgba( 150, 200, 250, 0.5);
+}
+
+div {
+    background: hsla(100, 20%, 50%, 0.8);
+}
+
+// Fallbacks
+div{
+    background: rgb(100, 50, 100);
+    background: rgba(100, 50, 100, 0.8);
+}
+
+div{
+    background: hsl(100, 50%, 50%);
+    background: hsla(100, 50%, 50%, 0.8);
+}
