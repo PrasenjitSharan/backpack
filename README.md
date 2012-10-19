@@ -1,6 +1,7 @@
 backpack
 ========
-Here you have the public repo of Prasenjit Sharan
-(prasenjitsharan.com), from Bangalore, IN.
+Here you have the findings and inspirations, stubmbled upon code blocks and notes.
 
-More to follow...
+| prasenjitsharan.com | 
+| Bangalore, IN |
+
