@@ -1,0 +1,16 @@
+<!--	source- http://www.prasenjitsharan.com/blog/refresh-parent-window-from-modal-dialog-in-ie/
+
+		file- popup.html
+-->
+<!DOCTYPE html>
+<head>
+	<title>Refresh Parent Window from Modal Dialog in IE</title>
+</head>
+<body>
+	<script>
+		// Script to reload parent window from a modal dialog
+		var objWindow =  window.dialogArguments;
+		objWindow.location.replace(objWindow.location);
+	</script>
+</body>
+</html>
