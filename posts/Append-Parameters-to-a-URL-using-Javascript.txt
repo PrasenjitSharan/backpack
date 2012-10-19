@@ -1,0 +1,37 @@
+Posted on July 15, 2012
+-----------------------
+
+Appending parameters to the current document location url can be useful sometimes when you are working on an app to load content based on user actions. Well, this is just one of the uses as I was doing the same last week. Here is a real simple JavaScript function using JSON to append parameters to the url.
+
+/* 
+ * Function to append parameters to a url 
+ * returns the result url string 
+ * parameter 1 – url, string 
+ * parameter 2 – params, JSON object with parameter list to be appended 
+ */ 
+
+function appendUrlParams(url, params) { 
+    var appendAmpersand = (url.length > 0) 
+        && (url.charAt(url.length - 1) != '?'); 
+    
+    for ( var property in params) { 
+        if (appendAmpersand == true) { 
+            url += "&"; 
+        } 
+        else { 
+            appendAmpersand = true; 
+        } 
+
+        if (typeof params[property] === "object") { 
+            url += (property + "=" + escape(JSON.stringify(params[property]))); 
+        } 
+        else { 
+            url += (property + "=" + escape(params[property])); 
+        } 
+    } 
+    return url; 
+} 
+
+Footnote
+
+You can download JSON in JS from here.

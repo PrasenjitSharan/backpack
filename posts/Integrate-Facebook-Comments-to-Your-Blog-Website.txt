@@ -1,0 +1,39 @@
+Posted on February 3, 2012
+--------------------------
+
+Integrating Facebook comments to your blog posts is pretty simple and immensely useful, needless to say. Features like moderating comments and blocking comments with keyword(s) of your choice give that extra level of security and genuineness that you would like to see in your personal or professional website.
+All you need is a WordPress blog and a Facebook profile.
+Here are the easy steps. I’ll take example (and hence, screenshots) of how I integrated it on this blog-
+
+1. Create a Facebook App (Nothing fancy about it)
+First you need to create a Facebook comments app for your website. It’s simple. Goto Facebook developers apps page. Click on the +Create New App tab on the top right of the window. You will get a New App window.
+
+Give an App Display Name of your choice. Agree to the policies and say continue (No need to provide App Namespace). Prove you are human by entering those blurry words and you have your app created.
+You will get a page something like this.
+
+
+2. Map your App with your Blog Website
+You need to map your website with the app you created just now. Goto Facebook Comments plugin page and enter details as below.
+
+Fields are quite self-explanatory here. They have provided (?) helps in case you get confused somewhere. Use it!!
+
+Click on Get Code after entering your website URL and other info. Select HTML5 from the top tabs (It’s selected by default. Make sure the app you created for this is selected).
+
+
+3. Copy the code to your WordPress files
+First set of code goes to the header.php template file just after the body tag. Simply paste it after body tag.
+The second piece of code is copied where you want to display your comments on the page. Before that, you need to modify this code, just a little. Replace “http://example.com” with WordPress permalink i.e. . So, it would something like this-
+<div data-href="<?php the_permalink(); ?>" data-num-posts="15" data-width="500"></div>
+Now, we will edit comments.php of the template.
+
+To put Facebook comments before WordPress comments, paste this code before the WordPress comments are called. Paste it just after this line which is-
+<!-- You can start editing here. -->
+
+To put Facebook comments after WordPress commets, paste it after the form end tag i.e. </form>.
+
+To completely replace WorPress comments with Facebook comments, replace the call to your comments.php with the call to your Facebook comments. For example, add this code to page.php to show Facebook comments on pages.
+
+4. Time for some Spam Blocking (You don’t love them)
+Play with comments moderation and blocking keywords on Facebook Comment Moderation Tool page settings link.
+
+We are good to go now. Get your blog (more) talked about with Facebook!

@@ -1,0 +1,42 @@
+Posted on June 18, 2012
+-----------------------
+
+RGBa and HSLa are two ways to declare colors in a CSS with transparency. Something like this.
+
+div {
+     background: rgba( 150, 200, 250, 0.5);
+     }
+ OR
+ div {
+     background: hsla(100, 20%, 50%, 0.8);
+     }
+This is different from the opacity property. When we use some opacity value, it’s reflected to the children element also and it makes those elements also transparent. But, if we use RGBa or HSLa properties, it applies the transparency only to that particular element.
+
+RGBA
+The format is quite simple. The first three numbers in RGBa value represent the RGB value and a stands for alpha transparency. The alpha value can be form 0 till 1, with 0 being fully transparent and 1 with no transparency).
+
+HSLA
+HSL represent Hue, Saturation and Lightness respectively. As in RGBa, last value is for transparency level. Here is a quick glance these properties.
+
+Hue: It requires a degree value. From 0 to 360. It starts with variations of Red (at 0 deg) goes to Greens (at 120 deg), then to Blues( at 240 deg) and returns back to Reds (at 360 deg).
+Saturation: It’s a percentage value. 0% represents completely desaturated color (grayscale) and 100% with full color.
+Lightness: Lightness from 0% thru 100%. 50% is ‘normal’ lightness.
+Alpha: The fourth value is for opacity of a color as in RGBa. Valid values range from 0 thru 1.
+FALLBACK COLOR
+Not all the browsers support RGBa and HSLa color declarations. RGBa color values are supported in IE9+, Firefox 3+, Chrome, Safari, and in Opera 10+ and HSLa in IE9+, Firefox, Chrome, Safari, and in Opera 10+. Check this page.
+As a rule, ‘If RGBA values are not supported by a user agent, they should be treated like unrecognized values per the CSS forward compatibility parsing rules. RGBA values must not be treated as simply an RGB value with the opacity ignored.’ (from W3C recommendations for CSS3 color module). To avoid such failure to support these color schemes, we should declare a fallback color, something like this.
+
+div{
+     background: rgb(100, 50, 100);
+     background: rgba(100, 50, 100, 0.8);
+     }
+ OR
+ div{
+     background: hsl(100, 50%, 50%);
+     background: hsla(100, 50%, 50%, 0.8);
+     }
+So, in case the browser doesn’t support the alpha part, the previous style (with no alpha value) gets applied. In case it does, the no alpha value rule gets overridden.
+
+ADDITIONAL NOTES
+You can find an intuitive matrix with HSL color examples here.
+To get the HSL values you can use ‘Rainbow Color Tools’, a nice color-picker add-on for Firefox in which you can choose HSL as the output values of the picked color.

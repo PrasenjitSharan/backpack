@@ -1,0 +1,15 @@
+Posted on July 14, 2012
+-----------------------
+
+A very quick and efficient way to create tap-to-call buttons for mobile devices is using HTML 5 <a> tag. It works perfectly for almost all the devices including Android, iPhone, Nokia and Blackberry. Here is the simple code.
+
+<a href = “tel:+919620236855”>Click-To-Call</a>
+
+Not only mobile devices, it works perfectly on all platforms. So, if you are on your PC, the website would initiate the call using the installed communication program, like MS Office Lync or Communicator.
+
+Additionally, this can be extended to make hyperlinks for Skype calls. The code, again, short and simple.
+
+<a href = “skype:skype-user-name?call”> Skype me </a>
+
+FOOT NOTE
+This is just one example of creating phone call hyperlinks using HTML 5 anchor tags. There are many more available. Explore and use when needed

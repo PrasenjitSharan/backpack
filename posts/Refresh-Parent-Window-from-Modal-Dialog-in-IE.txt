@@ -1,0 +1,24 @@
+Posted on December 1, 2011
+--------------------------
+
+The simplest way to reload the parent page from a popup window is to use a function that looks something like this-
+
+// Script to reload parent window from popup
+ <script language="javascript">
+     function fnRefreshParentWindow(){
+         window.parent.location.reload();
+     }
+ </script>
+I used the same script but was found myself scratching my head as it was not working. The reason lies in the fact that opening popup using showModalDialog() is handled differently. Read more about modalDialog function here.
+Here is the solution. Pass the current window object with showModalDialog() parameters. Set it in a local variable in the popup window and reload the parent window. This will make things clear.
+Parent window-
+
+ window.showModalDialog(‘./popup.html’, window, ‘height=220, width=200, other params’);
+popup.html
+
+// Script to reload parent window from a modal dialog
+ <script language="javascript">
+     var objWindow =  window.dialogArguments;
+     objWindow.location.replace(objWindow.location);
+ </script>
+Now close the popup window after this. Using modeless diaolog won’t require closing the window, it will automatically do it.

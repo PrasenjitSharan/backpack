@@ -1,0 +1,37 @@
+Posted on June 13, 2012
+-----------------------
+
+There are many options when we write css to set the size of elements for the website. We can set the size of a header like this h1 { font-size: large; } . Alternatively, we can use a numeric value for the size, h1 { font-size: 22px; } . In general, we can use two kinds of property-value pairs:
+
+A numeric value
+A keyword
+Let’s dive in a little to know more about the above ways and see which is to be used when.
+
+1. em
+I guess it’s not documented anywhere but em stands for uppercase M, the width of the character. By definition, 1 em is equal to the height of the size of font being currently used. So, by default it is default font size of the browser, which is 16px mostly. But, say, if we have changed the font size in the body to 20px, 1 em will be equal to 20px then. And similarly, 1.5em = 30px.
+Thus, using em for giving size to elements keeps all the elements of the website in sync. If we increase the font size from 10px to 12px (a 20% increase), a div set with 10em> will become of 120px. Good for dynamic size websites.
+
+2. %
+Percentages are pretty straight forward to use and they behave as we expect. So, if we give body { font-size: 16px; } , and the child element with font size as 50%, child’s font-size would be 8px. Simple math! Using % is quite similar to using em.
+
+3. px
+A pixel can be defined as the smallest unit on a display device. is the most accurate option to use for giving size to the elements. So, if we say, font-size: 12px, the text would always be 14px tall, any platform, any browser. Moreover, it’s a popular practice to define a px value for size in body and then use relative options (em, %) for child element.
+
+4. pt
+Point is used mainly in webpages used for printing purpose. A pt is equal to 1/72 of an inch on a real paper. So if we have to have webpages used to be printed it’s advisable to use pt since, on a paper it would be as consistent as we have a px on a computer monitor.
+
+5. Keyword
+Keywords tell the browser to render the element based on the size’s value as defined by following-
+
+xx-small
+x-small
+small
+medium
+large
+x-large
+xx-large
+The values are quite self-explanatory, x naturally stands for extra.
+Apart from these, we can also use relative values for keywords- smaller, larger. In this case the size of the element depends on that of the parent. In this case, the style cascades based on the values of parent and child.
+Clearly, keywords don’t give pin-point control, we can use it but with lesser effect.
+
+It depends on the use as to which option to choose out of these available ones.pxis consistent on monitors whileptis on a printed paper. Elsewhere, we have options to use relative and keywords.
